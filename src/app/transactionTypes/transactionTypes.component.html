@@ -1,0 +1,11 @@
+<nav mat-tab-nav-bar>
+  <a
+    mat-tab-link
+    *ngFor="let type of transactionTypes; let i = index"
+    (click)="onTabChange(i)"
+    [active]="activeTypeIndex == i"
+  >
+    {{ type | uppercase }}
+  </a>
+</nav>
+

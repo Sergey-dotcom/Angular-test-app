@@ -1,0 +1,17 @@
+<app-transaction-types></app-transaction-types>
+<div>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <td scope="col">Name</td>
+                <td scope="col">Amount</td>
+            </tr>
+        </thead>
+        <tbody >
+            <tr scope="row" *ngFor="let item of transactions | filter: this.activeType">
+                <td>{{item.name.first}} {{item.name.last}}</td>
+                <td>{{item.amount}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

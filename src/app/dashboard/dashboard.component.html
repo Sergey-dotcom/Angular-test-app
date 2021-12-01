@@ -1,0 +1,24 @@
+<div class="card text-center">
+  <div class="card-header"></div>
+  <div class="card-body">
+    <h5 class="card-title">Welcome</h5>
+    <p class="card-text">
+      With supporting text below as a natural lead-in to additional content.
+    </p>
+    <a href="#" routerLink="/navigator" class="btn btn-primary">See transactions</a>
+  </div>
+  <div class="card-footer text-muted">
+    You have {{ transactionTotal }} transactions
+  </div>
+</div>
+<div class="row">
+  <div *ngFor="let type of transactionTypes; let i = index" class="col-md-6 col-xl-3">
+    <div class="card text-center mb-2 mt-2">
+      <div class="card-body">
+        <h5 class="card-title">{{transactionSummary[type]}}</h5>
+        <p class="card-text">{{ type | uppercase }}</p>
+        <a href="#" routerLink="/navigator" [queryParams]="{tab: i}" class="btn btn-primary">See all</a>
+      </div>
+    </div>
+  </div>
+</div>
